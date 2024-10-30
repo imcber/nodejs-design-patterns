@@ -1,4 +1,4 @@
-import { spider } from "./spider.js";
+import { spider } from "./spider-refactor.js";
 
 spider(process.argv[2], (err, filename, downloaded) => {
 	if (err) {
