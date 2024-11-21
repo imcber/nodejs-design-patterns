@@ -2,7 +2,7 @@ import { promises as fsPromises } from "fs";
 import { dirname } from "path";
 import superagent from "superagent";
 import mkdirp from "mkdirp";
-import { urlToFilename, getPageLinks } from "./utils.js";
+import { urlToFilename, getPageLinks } from "../utils.js";
 import { promisify } from "util";
 
 const mkdirpPromises = promisify(mkdirp);
@@ -23,7 +23,6 @@ function download(url, filename) {
 		});
 }
 
-//Asynchronous iteration pattern using promises
 function spiderLinks(currentUrl, content, nesting) {
 	let promise = Promise.resolve();
 	if (nesting === 0) {
